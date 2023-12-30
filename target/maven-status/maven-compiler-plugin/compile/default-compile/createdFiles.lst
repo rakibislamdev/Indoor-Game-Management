@@ -1,0 +1,6 @@
+module-info.class
+com\mycompany\indoorgamemangement\App.class
+com\mycompany\indoorgamemangement\GameRegistrationController.class
+com\mycompany\indoorgamemangement\PrimaryController.class
+com\mycompany\indoorgamemangement\Game.class
+com\mycompany\indoorgamemangement\SecondaryController.class
