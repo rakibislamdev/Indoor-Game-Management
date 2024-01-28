@@ -4,12 +4,14 @@
  */
 package com.mycompany.indoorgamemangement;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 /**
@@ -33,6 +35,8 @@ public class GameRegistrationController implements Initializable {
     private TextField maxPlayersField;
     @FXML
     private TextField durationField;
+    @FXML
+    private Button gameRegBack;
 
     /**
      * Initializes the controller class.
@@ -53,6 +57,11 @@ public class GameRegistrationController implements Initializable {
         System.out.println("Game Type: " + gameType);
         System.out.println("Board Number: " + boardNo);
         System.out.println("Max Players: " + maxPlayers);
+    }
+
+    @FXML
+    private void backToPrevious(ActionEvent event) throws IOException {
+        App.setRoot("dashboard");
     }
 
 }

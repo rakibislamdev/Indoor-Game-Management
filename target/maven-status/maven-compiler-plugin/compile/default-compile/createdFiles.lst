@@ -1,4 +1,5 @@
 com\mycompany\indoorgamemangement\DBConnection.class
+com\mycompany\indoorgamemangement\StudentRegistrationController.class
 com\mycompany\indoorgamemangement\PrimaryController.class
 com\mycompany\indoorgamemangement\SecondaryController.class
 com\mycompany\indoorgamemangement\WelcomeController.class
@@ -7,3 +8,4 @@ com\mycompany\indoorgamemangement\App.class
 com\mycompany\indoorgamemangement\GameRegistrationController.class
 com\mycompany\indoorgamemangement\DashboardController.class
 com\mycompany\indoorgamemangement\Game.class
+com\mycompany\indoorgamemangement\SlotBookingController.class

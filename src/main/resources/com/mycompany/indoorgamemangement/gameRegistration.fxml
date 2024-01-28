@@ -61,7 +61,7 @@
         </GridPane>
         <GridPane GridPane.columnIndex="0" GridPane.rowIndex="2">
           <children>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Cancel" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="TOP">
+            <Button fx:id="gameRegBack" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="30.0" prefWidth="120.0" text="Cancel" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="TOP">
               <GridPane.margin>
                 <Insets right="10.0" top="20.0" />
               </GridPane.margin>

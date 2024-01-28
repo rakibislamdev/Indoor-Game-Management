@@ -12,10 +12,10 @@
   <children>
     <GridPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
       <children>
-        <Button maxWidth="-1.0" minWidth="-1.0" mnemonicParsing="false" text="Student Registration" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" prefWidth="150.0"/>
-        <Button mnemonicParsing="false" text="Game Registration" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" prefWidth="150.0"/>
-        <Button mnemonicParsing="false" text="Slot Booking" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" prefWidth="150.0"/>
-        <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" prefWidth="150.0"/>
+        <Button fx:id="stuRegistration" maxWidth="-1.0" minWidth="-1.0" mnemonicParsing="false" onAction="#switchToStudentRegistration" prefWidth="150.0" text="Student Registration" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+        <Button fx:id="gameRegistration" mnemonicParsing="false" onAction="#switchToGameRegistration" prefWidth="150.0" text="Game Registration" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+        <Button fx:id="slotBooking" mnemonicParsing="false" onAction="#switchToSlotBooking" prefWidth="150.0" text="Slot Booking" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+        <Button fx:id="backButton" mnemonicParsing="false" prefWidth="150.0" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
@@ -28,4 +28,3 @@
     </GridPane>
   </children>
 </AnchorPane>
-

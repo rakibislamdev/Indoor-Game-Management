@@ -17,16 +17,10 @@ import javafx.scene.control.Button;
  *
  * @author Rakib
  */
-public class DashboardController implements Initializable {
+public class StudentRegistrationController implements Initializable {
 
     @FXML
-    private Button stuRegistration;
-    @FXML
-    private Button gameRegistration;
-    @FXML
-    private Button slotBooking;
-    @FXML
-    private Button backButton;
+    private Button stuRegBack;
 
     /**
      * Initializes the controller class.
@@ -37,18 +31,8 @@ public class DashboardController implements Initializable {
     }    
 
     @FXML
-    private void switchToStudentRegistration(ActionEvent event) throws IOException {
-        App.setRoot("studentRegistration");
-    }
-
-    @FXML
-    private void switchToGameRegistration(ActionEvent event) throws IOException {
-        App.setRoot("gameRegistration");
-    }
-
-    @FXML
-    private void switchToSlotBooking(ActionEvent event) throws IOException {
-        App.setRoot("slotBooking");
+    private void backToPrevious(ActionEvent event) throws IOException {
+        App.setRoot("dashboard");
     }
     
 }
