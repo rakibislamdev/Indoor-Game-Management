@@ -1,6 +1,7 @@
 com\mycompany\indoorgamemangement\DBConnection.class
 com\mycompany\indoorgamemangement\StudentRegistrationController.class
 com\mycompany\indoorgamemangement\PrimaryController.class
+com\mycompany\indoorgamemangement\StudentRegistrationController$1.class
 com\mycompany\indoorgamemangement\SecondaryController.class
 com\mycompany\indoorgamemangement\Student.class
 com\mycompany\indoorgamemangement\WelcomeController.class

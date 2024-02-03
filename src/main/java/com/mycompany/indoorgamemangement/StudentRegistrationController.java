@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -50,6 +52,8 @@ public class StudentRegistrationController implements Initializable {
     private TableColumn<Student, String> depertmentField;
     @FXML
     private TableColumn<Student, String> actionField;
+    @FXML
+    private Button updateButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -61,6 +65,21 @@ public class StudentRegistrationController implements Initializable {
 
         // Load student data into table
         loadStudentData();
+        
+         // Add listener for table selection change
+        studentTable.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Student>() {
+            @Override
+            public void changed(ObservableValue<? extends Student> observable, Student oldValue, Student newValue) {
+                if (newValue != null) {
+                    name.setText(newValue.getName());
+                    student_id.setText(newValue.getStudentId());
+                    batch.setText(newValue.getBatch());
+                    email.setText(newValue.getEmail());
+                    deperment.setText(newValue.getDepartment());
+                    phone.setText(newValue.getPhone());
+                }
+            }
+        });
     }
 
     @FXML
@@ -96,6 +115,39 @@ public class StudentRegistrationController implements Initializable {
             loadStudentData();
         } catch (SQLException e) {
             System.err.println("Error inserting data: " + e.getMessage());
+        } finally {
+            // Close the connection
+            DBConnection.closeConnection();
+        }
+    }
+    
+    @FXML
+    private void updateStudent(ActionEvent event) {
+        try {
+            // Establish a database connection
+            Statement statement = DBConnection.getStatement();
+
+            // Get values from the UI
+            String studentName = name.getText();
+            String studentId = student_id.getText();
+            String studentBatch = batch.getText();
+            String studentEmail = email.getText();
+            String studentDepartment = deperment.getText();
+            String studentPhone = phone.getText();
+
+            // Execute SQL UPDATE statement
+            String updateQuery = "UPDATE students SET name='" + studentName + "', batch='" + studentBatch + "', email='" +
+                    studentEmail + "', depertment='" + studentDepartment + "', phone='" + studentPhone + "' WHERE student_id='" + studentId + "'";
+
+            // Execute the query
+            statement.executeUpdate(updateQuery);
+
+            System.out.println("Student data updated successfully!");
+
+            // Reload student data into table after update
+            loadStudentData();
+        } catch (SQLException e) {
+            System.err.println("Error updating data: " + e.getMessage());
         } finally {
             // Close the connection
             DBConnection.closeConnection();
