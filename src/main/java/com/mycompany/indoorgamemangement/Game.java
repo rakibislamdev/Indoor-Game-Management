@@ -1,63 +1,68 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.indoorgamemangement;
 
-/**
- *
- * @author Rakib
- */
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Game {
-    private String gameName;
-    private String gameType;
-    private int boardNo;
-    private int maxPlayers;
+    private final StringProperty gameName;
+    private final StringProperty gameType;
+    private final IntegerProperty boardNo;
+    private final IntegerProperty maxPlayers;
 
     public Game(String gameName, String gameType, int boardNo, int maxPlayers) {
-        this.gameName = gameName;
-        this.gameType = gameType;
-        this.boardNo = boardNo;
-        this.maxPlayers = maxPlayers;
+        this.gameName = new SimpleStringProperty(gameName);
+        this.gameType = new SimpleStringProperty(gameType);
+        this.boardNo = new SimpleIntegerProperty(boardNo);
+        this.maxPlayers = new SimpleIntegerProperty(maxPlayers);
     }
 
-    public String getGameName() {
+    public StringProperty gameNameProperty() {
         return gameName;
     }
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
-    }
-
-    public String getGameType() {
+    public StringProperty gameTypeProperty() {
         return gameType;
     }
 
-    public void setGameType(String gameType) {
-        this.gameType = gameType;
-    }
-
-    public int getBoardNo() {
+    public IntegerProperty boardNoProperty() {
         return boardNo;
     }
 
-    public void setBoardNo(int boardNo) {
-        this.boardNo = boardNo;
-    }
-
-    public int getMaxPlayers() {
+    public IntegerProperty maxPlayersProperty() {
         return maxPlayers;
     }
 
-    public void setMaxPlayers(int maxPlayers) {
-        this.maxPlayers = maxPlayers;
+    public String getGameName() {
+        return gameName.get();
     }
 
-    @Override
-    public String toString() {
-        return "Game{" + "gameName=" + gameName + ", gameType=" + gameType + ", boardNo=" + boardNo + ", maxPlayers=" + maxPlayers + '}';
+    public void setGameName(String gameName) {
+        this.gameName.set(gameName);
     }
-    
-    
-    
+
+    public String getGameType() {
+        return gameType.get();
+    }
+
+    public void setGameType(String gameType) {
+        this.gameType.set(gameType);
+    }
+
+    public int getBoardNo() {
+        return boardNo.get();
+    }
+
+    public void setBoardNo(int boardNo) {
+        this.boardNo.set(boardNo);
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers.get();
+    }
+
+    public void setMaxPlayers(int maxPlayers) {
+        this.maxPlayers.set(maxPlayers);
+    }
 }
